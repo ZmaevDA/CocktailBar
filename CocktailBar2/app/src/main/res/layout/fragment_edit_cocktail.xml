@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.screen.editing.EditCocktailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin">
+
+        <ImageView
+            android:id="@+id/cocktail_pic_iv"
+            android:layout_width="224dp"
+            android:layout_height="224dp"
+            android:src="@drawable/no_image"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/app_name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/title_edit_til"
+            style="@style/TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:hint="@string/title"
+            app:helperText="@string/add_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cocktail_pic_iv">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textAppearance="@style/Text.Normal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/description_til"
+            style="@style/TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:hint="@string/description"
+            app:helperText="@string/add_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_edit_til">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textAppearance="@style/Text.Normal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/ingredients_cg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginStart="@dimen/default_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_til" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/add_ingredient_chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/ingredients_cg"
+            app:layout_constraintTop_toBottomOf="@+id/description_til"
+            android:text="+"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/recipe_til"
+            style="@style/TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:hint="@string/recipe"
+            app:helperText="@string/add_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_ingredient_chip">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textAppearance="@style/Text.Normal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="32dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:id="@+id/save_cocktail_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            app:layout_constraintTop_toBottomOf="@id/recipe_til"/>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="32dp"
+            app:strokeWidth="2dp"
+            android:backgroundTint="@color/white"
+            android:textColor="?attr/colorPrimary"
+            app:strokeColor="?attr/colorPrimary"
+            android:id="@+id/cancel_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            app:layout_constraintTop_toBottomOf="@id/save_cocktail_button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
